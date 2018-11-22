@@ -2,7 +2,7 @@ const request = require('request');
 
 const weatherForecast = (result, callback) => {
     request({
-        url:`https://api.darksky.net/forecast/9b7ae36b51770111cab61812b4ced1af/${result.latitude},${result.longitude}`,
+        url:`https://api.darksky.net/forecast/YOUR API KEY/${result.latitude},${result.longitude}`,
         json: true
     }, (error, response, body) => {
         if(!error && response.statusCode === 200) {
@@ -15,9 +15,9 @@ const weatherForecast = (result, callback) => {
             callback('Unable to fetch weather');
         } 
     });
-}
+};
 
 
 module.exports = {
     weatherForecast
-}
+};
